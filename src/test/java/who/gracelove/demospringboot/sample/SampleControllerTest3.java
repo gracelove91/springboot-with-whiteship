@@ -16,12 +16,8 @@ class SampleControllerTest3 {
     @Autowired
     WebTestClient webTestClient;
 
-    @MockBean
-    SampleService mockSampleService;
-
     @Test
     void hello() {
-        when(mockSampleService.getName()).thenReturn("gracelove");
 
         webTestClient.get().uri("/hello").exchange()
                 .expectStatus().isOk()
